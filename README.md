@@ -53,3 +53,10 @@ Cancellation libraries usually ask you to install a runtime and wrap every call 
 ## Interpretation note
 
 A context is a single absolute instant. There is no separate "total budget" and "per-call budget"; a tighter child replaces the parent's instant. This is the one reading this library implements, and the tests exercise exactly that.
+
+## Design notes
+
+The window stores values eagerly rather than keeping running aggregates. Running
+sums drift with floating point over long streams, and recomputing from a small
+buffer is cheap enough that the drift is not worth the speed.
+
