@@ -1,6 +1,6 @@
 {
   "name": "deadline-ctx-tools",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Thread an immutable deadline through nested calls, tightening but never extending it.",
   "type": "module",
   "main": "src/index.js",
